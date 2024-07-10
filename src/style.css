@@ -1,3 +1,36 @@
+@import '@vue-flow/core/dist/style.css';
+@import '@vue-flow/core/dist/theme-default.css';
+@import '@vue-flow/controls/dist/style.css';
+@import '@vue-flow/minimap/dist/style.css';
+/* @import 'https://cdn.jsdelivr.net/npm/@vue-flow/node-resizer@latest/dist/style.css'; */
+@import '@vue-flow/node-resizer/dist/style.css';
+/* @import '@vue-flow/node-toolbar/dist/style.css'; */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  color: #111;
+  padding: 5px;
+}
+
+#app {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+}
+
+

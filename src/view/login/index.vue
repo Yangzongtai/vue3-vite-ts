@@ -2,8 +2,8 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-08 15:44:43
- * @FilePath: \my-vue-app\src\components\HelloWorld.vue
+ * @LastEditTime: 2024-07-08 15:44:31
+ * @FilePath: \my-vue-app\src\view\login\index.vue
  * @Description: 
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
 -->
@@ -39,7 +39,7 @@ const loginHandle = () => {
   login_loading.value = true
   // 登录
   UserLogin(params).then((res: any) => {
-    console.log('res', res)
+    console.log('res',res)
     const { token } = res.data
     const userInfo = res.data
     localStorage.setItem('userInfo', JSON.stringify(userInfo))
