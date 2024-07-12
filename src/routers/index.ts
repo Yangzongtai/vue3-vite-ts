@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-08 14:34:14
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-08 16:50:58
+ * @LastEditTime: 2024-07-11 14:53:24
  * @FilePath: \my-vue-app\src\routers\index.ts
  * @Description:
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -29,10 +29,17 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   //   const userStore = useUserStore()
   NProgress.start();
+  document.title = to.meta.title ? `${to.meta.title} - 爱坤` : "爱坤";
 
-  setTimeout(() => {
-    next();
-  }, 500);
+  if (to.path === "/login") {
+    return next();
+  }
+  // 5.判断是否有 Token，没有重定向到 login 页面
+  if (!localStorage.getItem("token")) {
+    return next({ path: "/login", replace: true });
+  }
+
+  next();
 });
 
 router.onError((error) => {

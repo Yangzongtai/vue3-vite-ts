@@ -2,8 +2,8 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 11:08:41
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-03 11:54:48
- * @FilePath: \my-vue-app\src\api\user\user.ts
+ * @LastEditTime: 2024-07-11 11:43:50
+ * @FilePath: \my-vue-app\src\api\user\index.ts
  * @Description:
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
  */
@@ -16,4 +16,9 @@ export const UserLogin = (data: {
   password: string;
 }): Promise<any> => {
   return request.post("/login/login", data);
+};
+
+// 获取用户列表
+export const GetUserList = (params: any): Promise<any> => {
+  return request.get("/login/list", params);
 };

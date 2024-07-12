@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-08 15:45:11
+ * @LastEditTime: 2024-07-11 10:54:52
  * @FilePath: \my-vue-app\src\view\home\index.vue
  * @Description: 
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -34,12 +34,19 @@
             </el-form-item>
         </el-form>
         <el-button :loading="login_loading" type="primary" @click="submitForm(formRef)">登录</el-button>
+
+        <el-button>点击{{ userStore.$state.counter }}</el-button>
+        <el-button @click="getUserList">点击获取用户</el-button>
     </div>
 </template>
 
 <script setup lang="ts" name="home">
 import { onMounted, reactive, ref } from 'vue'
-import { UserLogin } from "@/api/user";
+import { UserLogin, GetUserList } from "@/api/user";
+import useUserStore from '@/store/user';
+
+// 试试 pinia
+const userStore = useUserStore();
 
 onMounted(() => {
     console.log('78999');
@@ -78,6 +85,15 @@ const loginHandle = () => {
         console.log('err', err)
     }).finally(() => {
         login_loading.value = false
+    })
+}
+
+// 获取用户
+const getUserList = () => {
+    GetUserList({page: 1, pagesize: 10}).then((res: any) => {
+        console.log('用户res', res)
+    }).catch((err: any) => {
+        console.log('err', err)
     })
 }
 </script>

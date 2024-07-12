@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-08 15:38:26
+ * @LastEditTime: 2024-07-11 10:01:40
  * @FilePath: \my-vue-app\src\main.ts
  * @Description:
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -13,8 +13,9 @@ import "./style.css";
 import App from "./App.vue";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import pinia from './store'
 
 // 引入全局样式
 // import "@/styles/index.scss";
 
-createApp(App).use(ElementPlus).use(router).mount("#app");
+createApp(App).use(ElementPlus).use(router).use(pinia).mount("#app");
