@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-15 15:22:31
+ * @LastEditTime: 2024-08-03 14:43:29
  * @FilePath: \my-vue-app\src\App.vue
  * @Description: 
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -23,10 +23,11 @@ const handleClose = (key: string, keyPath: string[]) => {
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <el-container>
     <el-header class="bg-blue-300 text-white">
-      <div class="w-100% h-10 flex items-center justify-around">
+      <div class="w-100% h-60 flex items-center justify-around">
         <router-link to="/">Home</router-link>
         <router-link to="/login">Login</router-link>
         <router-link to="/flow">flow</router-link>
+        <router-link to="/sign">sign name</router-link>
       </div>
     </el-header>
     <el-container>
