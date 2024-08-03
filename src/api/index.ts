@@ -2,13 +2,14 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:55:52
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-11 13:40:22
+ * @LastEditTime: 2024-07-15 15:14:51
  * @FilePath: \my-vue-app\src\api\index.ts
  * @Description:
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
  */
 // 创建axios网络请求示例
 import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
+import { ElMessage } from "element-plus";
 
 // 创建axios实例
 const service = axios.create({
@@ -49,6 +50,8 @@ service.interceptors.response.use(
     }
     if (response.data.code === 401) {
       // token失效，跳转到登录页
+
+      ElMessage.error("token失效，请重新登录");
       window.location.href = "/login";
     }
     return Promise.reject(response.data);
@@ -57,6 +60,7 @@ service.interceptors.response.use(
   (error: AxiosError) => {
     // 响应错误处理
     console.log("我是响应错误拦截", error);
+    ElMessage.error(error.message || "请求出错了");
     return Promise.reject(error);
   }
 );

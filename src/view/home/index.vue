@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-11 10:54:52
+ * @LastEditTime: 2024-07-15 15:22:06
  * @FilePath: \my-vue-app\src\view\home\index.vue
  * @Description: 
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -10,7 +10,7 @@
 
 
 <template>
-    <div class="flex justify-center items-center flex-col h-screen">
+    <div class="flex justify-center items-center flex-col">
         <div class="text-3xl font-bold mb-10">i am home page</div>
         <el-form ref="formRef" style="width: 300px" :model="dynamicValidateForm" label-width="auto"
             class="demo-dynamic">

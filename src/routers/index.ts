@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-08 14:34:14
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-11 14:53:24
+ * @LastEditTime: 2024-07-15 15:13:55
  * @FilePath: \my-vue-app\src\routers\index.ts
  * @Description:
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -12,6 +12,7 @@ import routes from "./moduls";
 import { createRouter, createWebHistory } from "vue-router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import { ElMessage } from "element-plus";
 // import { useUserStore } from '@/store/user'
 NProgress.configure({
   easing: "ease", // 动画方式
@@ -36,6 +37,7 @@ router.beforeEach((to, from, next) => {
   }
   // 5.判断是否有 Token，没有重定向到 login 页面
   if (!localStorage.getItem("token")) {
+    ElMessage.warning("请先登录");
     return next({ path: "/login", replace: true });
   }
 
