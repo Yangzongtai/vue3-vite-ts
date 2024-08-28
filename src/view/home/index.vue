@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-15 15:22:06
+ * @LastEditTime: 2024-08-28 14:34:14
  * @FilePath: \my-vue-app\src\view\home\index.vue
  * @Description: 
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -50,6 +50,7 @@ const userStore = useUserStore();
 
 onMounted(() => {
     console.log('78999');
+    getUserList()
 })
 
 const dynamicValidateForm = reactive({ username: '', password: '' })

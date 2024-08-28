@@ -2,7 +2,7 @@
  * @Author: Yongxin Donald
  * @Date: 2024-07-03 10:43:01
  * @LastEditors: yzt
- * @LastEditTime: 2024-07-08 15:44:31
+ * @LastEditTime: 2024-08-28 14:37:26
  * @FilePath: \my-vue-app\src\view\login\index.vue
  * @Description: 
  * Copyright (c) 2024 by Donald/Yongxin, All Rights Reserved.
@@ -10,7 +10,9 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'
 import { UserLogin } from "@/api/user";
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
 onMounted(() => {
   console.log('789');
 })
@@ -44,6 +46,7 @@ const loginHandle = () => {
     const userInfo = res.data
     localStorage.setItem('userInfo', JSON.stringify(userInfo))
     localStorage.setItem('token', token)
+    router.replace({ path: '/' })
   }).catch((err: any) => {
     console.log('err', err)
   }).finally(() => {
